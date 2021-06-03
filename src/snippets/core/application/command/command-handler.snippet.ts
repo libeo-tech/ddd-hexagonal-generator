@@ -1,4 +1,4 @@
-import { kebabCasify } from "../../utils/string-manipulation";
+import { kebabCasify } from "../../../../utils/string-manipulation";
 
 export const getCommandHandlerSnippet: (name: string) => string = (name) => `
 import { Logger } from "@nestjs/common";

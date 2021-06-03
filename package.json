@@ -11,7 +11,9 @@
 	],
 	"activationEvents": [
 		"onCommand:libeo-ddh-generator.createDDHFolders",
-		"onCommand:libeo-ddh-generator.createDDHCommand"
+		"onCommand:libeo-ddh-generator.createDDHCommand",
+		"onCommand:libeo-ddh-generator.createDDHQuery",
+		"onCommand:libeo-ddh-generator.createDDHEntity"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -23,6 +25,14 @@
 			{
 				"command": "libeo-ddh-generator.createDDHCommand",
 				"title": "Create DDH Command"
+			},
+			{
+				"command": "libeo-ddh-generator.createDDHQuery",
+				"title": "Create DDH Query"
+			},
+			{
+				"command": "libeo-ddh-generator.createDDHEntity",
+				"title": "Create DDH Entity"
 			}
 		],
 		"menus": {
@@ -36,6 +46,16 @@
 					"command": "libeo-ddh-generator.createDDHCommand",
 					"group": "2_workspace",
 					"when": "explorerResourceIsFolder && resourceFilename == commands"
+				},
+				{
+					"command": "libeo-ddh-generator.createDDHQuery",
+					"group": "2_workspace",
+					"when": "explorerResourceIsFolder && resourceFilename == queries"
+				},
+				{
+					"command": "libeo-ddh-generator.createDDHEntity",
+					"group": "2_workspace",
+					"when": "explorerResourceIsFolder && resourceFilename == domain"
 				}
 			]
 		}
