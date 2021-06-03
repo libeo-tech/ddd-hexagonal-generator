@@ -4,67 +4,21 @@ This is the README for your extension "libeo-ddh-generator". After writing up a 
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This Extension allow automatic generation of modules using [Domain Driven Development Hexagonal Architecture](https://github.com/Sairyss/domain-driven-hexagon) Or DDH for short
 
-For example if there is an image subfolder under your extension project workspace:
+Available command are as follow : 
 
-\!\[feature X\]\(images/feature-x.png\)
+| Name               | Condition                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|--------------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Create DDH Folders | None                            | Creates the following:  <ul> <li> 🟢 module folder</li> <ul> <li> 🟢 core folder</li> <ul> <li> 🟢 application folder</li> <ul> <li> 🟢 commands folder</li><li> 🟢 queries folder</li><li> 🟢 application file</li> </ul> <li> 🟢 domain folder</li> </ul> <li> 🟢 infrastructure folder</li> <ul><li> 🟢 infrastructure file</li></ul> <li> 🟢 interface folder</li> <ul><li> 🟢 interface file</li></ul><li> 🟢 module file</li> </ul> </ul>                                                                                                                                                                 |
+| Create DDH Command | Folder must be named "commands" | Creates the following:  <ul> <li>module folder</li> <ul> <li>core folder</li> <ul> <li>application folder</li> <ul> <li>commands folder</li> <ul> <li> 🟢 command folder</li> <ul><li> 🟢 command file</li><li> 🟢 command handler file</li><li> 🟢 port file</li></li></ul> </ul> <li>queries folder</li> <li>application file</li> </ul> <li>domain folder</li> </ul> <li>infrastructure folder</li> <ul><li>infrastructure file</li></ul> <li>interface folder</li> <ul><li>interface file</li></ul><li>module file</li> </ul> </ul>                                         |
+| Create DDH Query   | Folder must be named "queries"  | Creates the following:  <ul> <li>module folder</li> <ul> <li>core folder</li> <ul> <li>application folder</li> <ul> <li>commands folder</li> <li>queries folder</li> <ul> <li> 🟢 query folder</li> <ul><li> 🟢 query file</li><li> 🟢 query handler file</li><li> 🟢 port file</li></li></ul> </ul> <li>application file</li> </ul> <li>domain folder</li> </ul> <li>infrastructure folder</li> <ul><li>infrastructure file</li></ul> <li>interface folder</li> <ul><li>interface file</li></ul><li>module file</li> </ul> </ul>                                               |
+| Create DDH Entity  | Folder must be named "domain"   | <ul> <li>module folder</li> <ul> <li>core folder</li> <ul> <li>application folder</li> <ul> <li>commands folder</li> <li>queries folder</li> <li>application file</li> </ul> <li>domain folder</li> <ul> <li> 🟢 entity folder</li> <ul> 🟢 entity file</ul> </ul> </ul> <li>infrastructure folder</li> <ul><li>infrastructure file</li> <li> 🟢 infrastructure folder</li> <ul><li> 🟢 adapter file</li><li> 🟢 repository file</li></ul> </ul> <li>interface folder</li> <ul><li>interface file</li></ul><li>module file</li> </ul> </ul> |
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
+To use the extension just right click on the source folder where you want to create your module/entity/query/command and select the command in the menu
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
+The created files are not added to the parent files, please add them manually for now.
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Try to use the command/query/entity command in a well organized folder (Preferably one generated with the module command) or else it might create the files at the wrong place ! 
