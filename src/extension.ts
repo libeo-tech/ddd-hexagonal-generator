@@ -71,10 +71,10 @@ async function onCreateEntity(selectedFolder: vscode.Uri) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-	const createDDHFolders = vscode.commands.registerCommand('libeo-ddh-generator.createDDHFolders', onCreateDirectories);
-	const createDDHCommand = vscode.commands.registerCommand('libeo-ddh-generator.createDDHCommand', onCreateCommand);
-	const createDDHQuery = vscode.commands.registerCommand('libeo-ddh-generator.createDDHQuery', onCreateQuery);
-	const createDDHEntity = vscode.commands.registerCommand('libeo-ddh-generator.createDDHEntity', onCreateEntity);
+	const createDDHFolders = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHFolders', onCreateDirectories);
+	const createDDHCommand = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHCommand', onCreateCommand);
+	const createDDHQuery = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHQuery', onCreateQuery);
+	const createDDHEntity = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHEntity', onCreateEntity);
 
 	context.subscriptions.push(createDDHFolders, createDDHCommand, createDDHQuery, createDDHEntity);
 }

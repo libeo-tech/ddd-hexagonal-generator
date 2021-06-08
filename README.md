@@ -1,7 +1,3 @@
-# libeo-ddh-generator README
-
-This is the README for your extension "libeo-ddh-generator". After writing up a brief description, we recommend including the following sections.
-
 ## Features
 
 This Extension allow automatic generation of modules using [Domain Driven Development Hexagonal Architecture](https://github.com/Sairyss/domain-driven-hexagon) Or DDH for short

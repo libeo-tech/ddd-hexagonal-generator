@@ -1,8 +1,10 @@
 {
-	"name": "libeo-ddh-generator",
-	"displayName": "Libeo DDH Generator",
+	"name": "ddd-hexagonal-generator",
+	"publisher": "Libeo",
+	"displayName": "DDD Hexagonal Generator",
+	"repository": {"url": "https://github.com/libeo-tech/ddd-hexagonal-generator"},
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.56.0"
 	},
@@ -10,50 +12,50 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:libeo-ddh-generator.createDDHFolders",
-		"onCommand:libeo-ddh-generator.createDDHCommand",
-		"onCommand:libeo-ddh-generator.createDDHQuery",
-		"onCommand:libeo-ddh-generator.createDDHEntity"
+		"onCommand:ddd-hexagonal-generator.createDDHFolders",
+		"onCommand:ddd-hexagonal-generator.createDDHCommand",
+		"onCommand:ddd-hexagonal-generator.createDDHQuery",
+		"onCommand:ddd-hexagonal-generator.createDDHEntity"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "libeo-ddh-generator.createDDHFolders",
+				"command": "ddd-hexagonal-generator.createDDHFolders",
 				"title": "Create DDH Folders"
 			},
 			{
-				"command": "libeo-ddh-generator.createDDHCommand",
+				"command": "ddd-hexagonal-generator.createDDHCommand",
 				"title": "Create DDH Command"
 			},
 			{
-				"command": "libeo-ddh-generator.createDDHQuery",
+				"command": "ddd-hexagonal-generator.createDDHQuery",
 				"title": "Create DDH Query"
 			},
 			{
-				"command": "libeo-ddh-generator.createDDHEntity",
+				"command": "ddd-hexagonal-generator.createDDHEntity",
 				"title": "Create DDH Entity"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
-					"command": "libeo-ddh-generator.createDDHFolders",
+					"command": "ddd-hexagonal-generator.createDDHFolders",
 					"group": "2_workspace",
 					"when": "explorerResourceIsFolder"
 				},
 				{
-					"command": "libeo-ddh-generator.createDDHCommand",
+					"command": "ddd-hexagonal-generator.createDDHCommand",
 					"group": "2_workspace",
 					"when": "explorerResourceIsFolder && resourceFilename == commands"
 				},
 				{
-					"command": "libeo-ddh-generator.createDDHQuery",
+					"command": "ddd-hexagonal-generator.createDDHQuery",
 					"group": "2_workspace",
 					"when": "explorerResourceIsFolder && resourceFilename == queries"
 				},
 				{
-					"command": "libeo-ddh-generator.createDDHEntity",
+					"command": "ddd-hexagonal-generator.createDDHEntity",
 					"group": "2_workspace",
 					"when": "explorerResourceIsFolder && resourceFilename == domain"
 				}
