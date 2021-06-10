@@ -59,7 +59,7 @@ async function onCreateEntity(selectedFolder: vscode.Uri) {
 		const rootFolder = await FileUtils.createDirectory(selectedFolder, kebabCasify(commandName));
 		const entityFile = await FileUtils.createFileWithContent(rootFolder, `${kebabCasify(commandName)}.entity.ts`, stringToUintArray(Snippets.getEntitySnippet(commandName)));
 
-		const infrastructureFolder = FileUtils.resolvePath(selectedFolder, "../../infrastructures/");
+		const infrastructureFolder = FileUtils.resolvePath(selectedFolder, "../../infrastructure/");
 		const infrastructureSubFolder = await FileUtils.createDirectory(infrastructureFolder, kebabCasify(commandName));
 		
 		const adapterFile = await FileUtils.createFileWithContent(infrastructureSubFolder, `${kebabCasify(commandName)}.adapter.ts`, stringToUintArray(Snippets.getAdapterSnippet(commandName)));

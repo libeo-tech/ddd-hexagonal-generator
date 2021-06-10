@@ -1,5 +1,5 @@
 export const getInfrastructureSnippet: (name: string) => string = (name) => `
-export const ${name}Infrastructures = {
+export const ${name}Infrastructure = {
   providers: [],
   repositories: [],
 };

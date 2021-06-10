@@ -1,5 +1,5 @@
 export const getInterfaceSnippet: (name: string) => string = (name) => `
-export const ${name}Interfaces = {
+export const ${name}Interface = {
   resolvers: [],
   controllers: [],
 };
