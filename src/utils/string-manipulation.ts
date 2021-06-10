@@ -7,6 +7,6 @@ export function stringToUintArray(string: string): Uint8Array {
 }
 
 export function camelCasify(string: string) {
-	return string.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+	return string.charAt(0).toLocaleLowerCase() + string.slice(1);
 }
 
