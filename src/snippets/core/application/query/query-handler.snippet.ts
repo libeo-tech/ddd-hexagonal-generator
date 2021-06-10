@@ -9,7 +9,7 @@ import { ${name}Query, ${name}QueryResult } from "./${kebabCasify(name)}.query";
 export class ${name}QueryHandler implements IQueryHandler<${name}Query> {
   constructor(private readonly ${camelCasify(name)}Port: ${name}Port) {}
 
-  public async execute(): Promise<void> {
+  public async execute({ payload }: ${name}Query): Promise<void> {
   }
 }
 `;
