@@ -3,7 +3,7 @@ export const ${name}Interface = {
   resolvers: [],
   controllers: [],
 };
-`;
+`.substring(1);
 
 
 

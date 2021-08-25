@@ -16,7 +16,7 @@ import { ${name}Interface } from "./interface/${kebabCasify(name)}.interface";
 })
 export class ${name}Module {}
 
-`;
+`.substring(1);
 
 
 

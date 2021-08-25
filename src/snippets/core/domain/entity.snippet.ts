@@ -8,4 +8,4 @@ import { Base } from "../../../../common/entities/base.entity";
 export class ${name} extends Base {
   id!: string & { __brand: "${camelCasify(name)}Id" };
 }
-`;
+`.substring(1);
