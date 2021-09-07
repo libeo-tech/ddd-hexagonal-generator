@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+
+## [0.0.5] - 2021-09-07
+### Added
+- Segment event to monitor extension usage
+
+### Fixed
+- No more extra whitespace at the end of file ç
 ## [0.0.4] - 2021-06-10
 ### Added
 - application.ts files now are types any[] so it compiles
