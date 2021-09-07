@@ -3,4 +3,4 @@ export const ${name}Infrastructure = {
   providers: [],
   repositories: [],
 };
-`;
+`.substring(1);

@@ -1,10 +1,20 @@
+import Analytics = require('analytics-node');
 import * as vscode from 'vscode';
 
 import * as FileUtils from './file-utils';
 import * as Snippets from "./snippets";
 import { kebabCasify, stringToUintArray } from './utils/string-manipulation';
 
+var analytics = new Analytics('KEY_HERE');
+
 async function onCreateDirectories(selectedFolder: vscode.Uri) {
+	analytics.track({
+		userId: vscode.env.machineId,
+		event: 'Used Command',
+		properties: {
+			commandName: 'createDirectories'
+		}
+	});
 	const moduleName = await vscode.window.showInputBox({ title: "DDH Module Name", prompt: "This command will create our directories according to our DDH architecture", placeHolder: "UserArtProject" });
 	if (moduleName) {
 		const rootFolder = await FileUtils.createDirectory(selectedFolder, kebabCasify(moduleName));
@@ -25,7 +35,15 @@ async function onCreateDirectories(selectedFolder: vscode.Uri) {
 }
 
 async function onCreateCommand(selectedFolder: vscode.Uri) {
+	analytics.track({
+		userId: vscode.env.machineId,
+		event: 'Used Command',
+		properties: {
+			commandName: 'createCommand'
+		}
+	});
 	const commandName = await vscode.window.showInputBox({ title: "DDH Command Name", prompt: "This command will create command files according to our DDH architecture", placeHolder: "CreateUserArtProject" });
+	
 	const moduleKebabName = FileUtils.basename(FileUtils.resolvePath(selectedFolder, "../../../"));
 	if (commandName) {
 		const rootFolder = await FileUtils.createDirectory(selectedFolder, kebabCasify(commandName));
@@ -39,6 +57,13 @@ async function onCreateCommand(selectedFolder: vscode.Uri) {
 }
 
 async function onCreateQuery(selectedFolder: vscode.Uri) {
+	analytics.track({
+		userId: vscode.env.machineId,
+		event: 'Used Command',
+		properties: {
+			commandName: 'createQuery'
+		}
+	});
 	const commandName = await vscode.window.showInputBox({ title: "DDH Query Name", prompt: "This command will create query files according to our DDH architecture", placeHolder: "GetUserArtProject" });
 	const moduleKebabName = FileUtils.basename(FileUtils.resolvePath(selectedFolder, "../../../"));
 	if (commandName) {
@@ -53,6 +78,13 @@ async function onCreateQuery(selectedFolder: vscode.Uri) {
 }
 
 async function onCreateEntity(selectedFolder: vscode.Uri) {
+	analytics.track({
+		userId: vscode.env.machineId,
+		event: 'Used Command',
+		properties: {
+			commandName: 'createEntity'
+		}
+	});
 	const commandName = await vscode.window.showInputBox({ title: "DDH Entity Name", prompt: "This command will create entity files according to our DDH architecture", placeHolder: "UserArtProject" });
 	const moduleKebabName = FileUtils.basename(FileUtils.resolvePath(selectedFolder, "../../"));
 	if (commandName) {
@@ -71,10 +103,15 @@ async function onCreateEntity(selectedFolder: vscode.Uri) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+
+	
 	const createDDHFolders = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHFolders', onCreateDirectories);
 	const createDDHCommand = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHCommand', onCreateCommand);
 	const createDDHQuery = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHQuery', onCreateQuery);
 	const createDDHEntity = vscode.commands.registerCommand('ddd-hexagonal-generator.createDDHEntity', onCreateEntity);
+	
+	
+	
 
 	context.subscriptions.push(createDDHFolders, createDDHCommand, createDDHQuery, createDDHEntity);
 }

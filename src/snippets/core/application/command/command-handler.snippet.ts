@@ -16,4 +16,4 @@ export class ${name}CommandHandler implements ICommandHandler<${name}Command> {
     this.logger.log(\`> ${name}Command: called\`);
   }
 }
-`;
+`.substring(1);

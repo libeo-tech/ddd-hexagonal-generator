@@ -7,4 +7,4 @@ export class ${name}Query implements IQuery {
 export class ${name}QueryResult implements IQueryResult {
   constructor() {}
 }
-`;
+`.substring(1);

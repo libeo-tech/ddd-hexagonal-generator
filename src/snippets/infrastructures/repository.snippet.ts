@@ -6,4 +6,4 @@ import { ${name} } from "../../core/domain/${kebabCasify(name)}/${kebabCasify(na
 
 @EntityRepository(${name})
 export class ${name}Repository extends Repository<${name}> {}
-`;
+`.substring(1);

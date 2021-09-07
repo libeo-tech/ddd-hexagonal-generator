@@ -12,4 +12,4 @@ export class ${name}QueryHandler implements IQueryHandler<${name}Query> {
   public async execute({ payload }: ${name}Query): Promise<void> {
   }
 }
-`;
+`.substring(1);

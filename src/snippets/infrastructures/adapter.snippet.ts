@@ -11,4 +11,4 @@ interface ${name}AdapterInterface {}
 export class ${name}Adapter implements ${name}AdapterInterface {
   constructor(private readonly ${camelCasify(name)}Repository: ${name}Repository) {}
 }
-`;
+`.substring(1);
