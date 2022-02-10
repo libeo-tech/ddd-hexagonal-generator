@@ -1,6 +1,6 @@
 export const getApplicationSnippet: (name: string) => string = (name) => `
-const ${name}QueryHandler: any[] = [];
-const ${name}CommandHandler: any[] = [];
+const ${name}QueryHandlers: any[] = [];
+const ${name}CommandHandlers: any[] = [];
 
-export const ${name}Applications = [...${name}QueryHandler, ...${name}CommandHandler];
+export const ${name}Applications = [...${name}QueryHandlers, ...${name}CommandHandlers];
 `.substring(1);
