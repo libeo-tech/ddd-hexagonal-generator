@@ -5,7 +5,7 @@ import * as FileUtils from './file-utils';
 import * as Snippets from "./snippets";
 import { kebabCasify, stringToUintArray } from './utils/string-manipulation';
 
-var analytics = new Analytics('KEY_HERE');
+var analytics = new Analytics(process.env.SEGMENT_KEY || "");
 
 async function onCreateDirectories(selectedFolder: vscode.Uri) {
 	analytics.track({
